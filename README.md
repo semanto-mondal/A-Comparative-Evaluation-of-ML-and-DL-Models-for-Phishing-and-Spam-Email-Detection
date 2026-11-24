@@ -2,7 +2,7 @@
 
 Code for the paper
 
-> S. Mondal, R. C. Ghosh, A. M. Avi, and J. Tasnim, "From Decision Trees to BERT: A Comparative Evaluation of ML and DL Models for Phishing and Spam Email Detection," *29th International Conference on Computer and Information Technology (ICCIT)*, Cox's Bazar, Bangladesh, 2026.
+> S. Mondal, R. C. Ghosh, A. M. Avi, and J. Tasnim, "From Decision Trees to BERT: A Comparative Evaluation of ML and DL Models for Phishing and Spam Email Detection," *29th International Conference on Computer and Information Technology (ICCIT)*, Cox's Bazar, Bangladesh, 2026. (Accepted and Under Conference Proceedings)
 
 We compare seven models (Decision Tree, Random Forest, Logistic Regression, linear SVM, BiLSTM, Transformer and BERT) for classifying emails as **legitimate** or **malicious** (phishing or spam). The two public corpora are merged in a way that avoids the usual shortcuts: duplicates are removed before splitting, and both corpora contribute both classes, so the source of an email does not reveal its label.
 
