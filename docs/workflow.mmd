@@ -1,0 +1,38 @@
+flowchart TD
+    A["<b>IWSPA-AP 2018</b><br/>9,163 legitimate, 1,131 phishing"]
+    B["<b>Enron-Spam</b><br/>16,545 legitimate, 17,119 spam"]
+
+    C["<b>Label standardisation</b><br/>label {0: legitimate, 1: malicious}, type, source"]
+    D["<b>Cross-corpus harmonisation</b><br/>[URL]/[EMAIL] placeholders; HTML, CSS, encoding clean-up"]
+    E["<b>Duplicate and conflict removal</b><br/>exact + MinHash-LSH near-duplicates (Jaccard ≥ 0.9)"]
+    F["<b>Source-balanced sampling</b><br/>17,934 e-mails; both corpora contribute both classes"]
+    G["<b>Stratified 80/10/10 split × 5 seeds</b><br/>train / validation (model selection) / held-out test"]
+
+    H1["<b>TF-IDF (50k)</b><br/>DT, RF, LR, SVM"]
+    H2["<b>Sequences (250)</b><br/>BiLSTM, Transformer"]
+    H3["<b>WordPiece (256)</b><br/>BERT-base"]
+
+    I["<b>Evaluation (mean ± std over 5 seeds)</b>"]
+    J["<b>Tkinter GUI</b><br/>per-model predictions + agreement chart (CPU)"]
+
+    A --> C
+    B --> C
+    C --> D --> E --> F --> G
+    G --> H1
+    G --> H2
+    G --> H3
+    H1 --> I
+    H2 --> I
+    H3 --> I
+    I --> J
+
+    classDef data fill:#e3eefb,stroke:#555,color:#000
+    classDef prep fill:#fdeee5,stroke:#555,color:#000
+    classDef split fill:#eef6ee,stroke:#555,color:#000
+    classDef model fill:#f1effb,stroke:#555,color:#000
+    classDef eval fill:#fff6dc,stroke:#555,color:#000
+    class A,B data
+    class C,D,E,F prep
+    class G split
+    class H1,H2,H3 model
+    class I,J eval

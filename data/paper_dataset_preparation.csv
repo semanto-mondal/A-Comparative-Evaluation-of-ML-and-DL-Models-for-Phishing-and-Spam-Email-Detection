@@ -1,0 +1,7 @@
+step,total,Enron-legitimate,Enron-spam,IWSPA-legitimate,IWSPA-phishing
+Raw (non-empty),43958,16545,17119,9163,1131
+After removing exact label conflicts,43956,16545,17118,9163,1130
+After exact de-duplication,39105,15547,14337,8191,1030
+After removing near-dup label conflicts,39105,15547,14337,8191,1030
+After near-duplicate removal,37916,15336,13565,8048,967
+Final source-balanced dataset,17934,8000,8000,967,967
